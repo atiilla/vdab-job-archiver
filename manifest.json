@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "VDAB Job Archiver",
+  "version": "1.0",
+  "description": "Archive old job applications on VDAB automatically",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://www.vdab.be/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "VDAB Job Archiver"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.vdab.be/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon16.jpeg",
+    "32": "icon32.jpeg",
+    "48": "icon48.jpeg",
+    "128": "icon128.jpeg"
+  }
+}

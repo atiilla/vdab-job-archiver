@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 350px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    
+    select, button {
+      width: 100%;
+      padding: 8px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    
+    button {
+      background-color: #007cba;
+      color: white;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    
+    button:hover {
+      background-color: #005a87;
+    }
+    
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    
+    .status {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+    
+    .status.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    
+    .status.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    
+    .status.info {
+      background-color: #cce7ff;
+      color: #004085;
+      border: 1px solid #b3d7ff;
+    }
+    
+    .progress {
+      margin-top: 10px;
+    }
+    
+    .progress-bar {
+      width: 100%;
+      height: 20px;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .progress-fill {
+      height: 100%;
+      background-color: #007cba;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    
+    .warning {
+      background-color: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeaa7;
+      padding: 10px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h2>VDAB Job Archiver</h2>
+    <p>Github: <a href="https://github.com/atiilla" target="_blank" style="text-decoration: none;">@atiilla</a></p>
+  </div>
+  
+  <div class="warning">
+    ⚠️ Make sure you're on the VDAB job applications page before running this tool.
+  </div>
+  
+  <div class="form-group">
+    <label for="olderThan">Archive jobs older than:</label>
+    <select id="olderThan">
+      <option value="1">1 month</option>
+      <option value="2">2 months</option>
+      <option value="3">3 months</option>
+      <option value="6">6 months</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <button id="startBtn">Start Archiving</button>
+    <button id="stopBtn" style="display: none;" disabled>Stop</button>
+  </div>
+  
+  <div class="progress" id="progress" style="display: none;">
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div id="progressText">Processing...</div>
+  </div>
+  
+  <div id="status"></div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
