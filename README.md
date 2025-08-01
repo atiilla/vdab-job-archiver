@@ -2,7 +2,7 @@
 
 A Chrome extension that automatically archives old job applications on the VDAB website.
 
-<img src="vdab-archive-jobs.png" alt="VDAB Job Archiver Icon" width="128" height="128">
+<img src="vdab-archive-jobs.png" alt="VDAB Job Archiver Icon">
 
 ## Features
 
